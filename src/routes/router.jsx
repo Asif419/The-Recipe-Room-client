@@ -5,6 +5,7 @@ import Main from "../layout/Main";
 import Home from "../pages/Home/Home";
 import Recipes from "../pages/Home/Recipes";
 import Blogs from "../pages/Home/Blogs";
+import UserProfile from "../pages/Home/UserProfile";
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
       {
         path: '/blogs',
         element: <Blogs></Blogs> 
+      },
+      {
+        path: '/user-profile',
+        element: <UserProfile></UserProfile> 
       },
     ]
   },

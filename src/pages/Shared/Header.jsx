@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Tooltip } from 'react-tippy';
+import { AuthContext } from '../../providers/AuthProviders';
 
 const Header = () => {
+  const { user } = useContext(AuthContext);
   return (
     <>
       {/* add new one */}
@@ -67,27 +69,31 @@ const Header = () => {
             </ul>
           </div>
           <div className="navbar-end">
-            <a className="btn btn-ghost px-5 py-0">Log in</a>
+            {user ?
+
+              <div className="dropdown dropdown-end">
+                <Tooltip title="Hello, user!">
+                  <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                    <div className="w-10 rounded-full">
+                      <img src="https://i.ibb.co/51StNHm/Lobster-Risotto.jpg" />
+                    </div>
+                  </label>
+                </Tooltip>
+                <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                  <li>
+                    <Link to='/user-profile'>
+                      Profile
+                    </Link>
+                  </li>
+                  <li><a>Logout</a></li>
+                </ul>
+              </div>
+
+              :
+              <a className="btn btn-ghost px-5 py-0">login</a>}
           </div>
           {/* profile picture start */}
-          <Tooltip title="Hello, user!">
-            <div className="dropdown dropdown-end">
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                <div className="w-10 rounded-full">
-                  <img src="https://i.ibb.co/51StNHm/Lobster-Risotto.jpg" />
-                </div>
-              </label>
-              <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                <li>
-                  <a className="justify-between">
-                    Profile
-                  </a>
-                </li>
-                <li><a>Settings</a></li>
-                <li><a>Logout</a></li>
-              </ul>
-            </div>
-          </Tooltip>
+
           {/* profile picture end */}
         </div>
       </div >
