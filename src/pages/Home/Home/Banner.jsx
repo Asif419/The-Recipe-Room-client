@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaSearchengin ,FaJenkins, FaBreadSlice, FaHandPeace } from 'react-icons/fa';
+import { FaSearchengin, FaJenkins, FaBreadSlice, FaHandPeace } from 'react-icons/fa';
 
 const Banner = () => {
   return (
@@ -8,8 +8,8 @@ const Banner = () => {
       <div className='px-2 md:px-5'>
         <p className=''>------ <span className='text-red-500 tracking-widest'>Chefs + Recipes</span></p>
         <h2 className='text-1xl md:text-3xl'>
-          <span className='text-2xl md:text-5xl text-red-800'>Welcome to</span>
-          <span className='underline decoration-base-200 text-2xl md:text-5xl pl-1 md:pl-2 font-bold'>The Recipe Room</span>
+          <span className='text-3xl md:text-5xl text-red-800'>Welcome to</span>
+          <span className='underline decoration-base-200 text-3xl md:text-5xl pl-1 md:pl-2 font-bold'>The Recipe Room</span>
         </h2>
         <br />
         <p className=' text-slate-500'>
@@ -39,7 +39,7 @@ const Banner = () => {
       </div>
       {/* right side */}
       <div className='sm:order-first'>
-        <div className="h-56 md:h-72 carousel carousel-vertical rounded">
+        <div className="h-48 md:h-72 carousel carousel-vertical rounded">
           <div className="carousel-item max-w-screen-lg mx-auto flex justify-center">
             <img className='max-w-full max-h-full' src="https://i.ibb.co/6RXSKJ0/Beef-Burger.webp" />
           </div>
@@ -54,9 +54,6 @@ const Banner = () => {
           </div>
           <div className="carousel-item max-w-screen-lg mx-auto flex justify-center">
             <img className='max-w-full max-h-full' src="https://i.ibb.co/fQB39V1/Barbecue-Pork-Ribs.jpg" />
-          </div>
-          <div className="carousel-item max-w-screen-lg mx-auto flex justify-center">
-            <img className='max-w-full max-h-full' src="https://i.ibb.co/51StNHm/Lobster-Risotto.jpg" />
           </div>
           <div className="carousel-item max-w-screen-lg mx-auto flex justify-center">
             <img className='max-w-full max-h-full' src="https://i.ibb.co/RD9GBDf/Shrimp-Scampi.jpg" />

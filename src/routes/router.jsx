@@ -9,6 +9,8 @@ import UserProfile from "../pages/Home/UserProfile";
 import Access from "../layout/access";
 import Register from "../pages/Access/Register";
 import Login from "../pages/Access/Login";
+import ChefDetails from "../pages/Home/ChefDetails";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -26,17 +28,17 @@ const router = createBrowserRouter([
       },
       {
         path: '/blogs',
-        element: <Blogs></Blogs> 
+        element: <Blogs></Blogs>
       },
       {
         path: '/user-profile',
-        element: <UserProfile></UserProfile> 
+        element: <UserProfile></UserProfile>
       },
-      // {
-      //   path: 'chef/:id',
-      //   element: ,
-      //   loader: {params} => fetch(`/${param.id}`)
-      // }
+      {
+        path: '/chef/:id',
+        element: <PrivateRoute><ChefDetails></ChefDetails></PrivateRoute>,
+        loader: ({ params }) => fetch(`https://the-recipe-room-server-asif419.vercel.app/chefs/${params.id}`)
+      }
     ]
   },
   {
