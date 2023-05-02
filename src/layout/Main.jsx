@@ -10,7 +10,9 @@ const Main = () => {
     <>
       <div className='container mx-auto'>
         <Header></Header>
-        <Outlet></Outlet>
+        <div className='min-h-[calc(100vh-360px)]'>
+          <Outlet></Outlet>
+        </div>
       </div>
       <Footer></Footer>
     </>

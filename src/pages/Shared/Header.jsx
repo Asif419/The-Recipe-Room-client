@@ -70,7 +70,7 @@ const Header = () => {
           </div>
           <div className="navbar-end">
             {user ?
-
+              /* profile picture start */
               <div className="dropdown dropdown-end">
                 <Tooltip title="Hello, user!">
                   <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
@@ -88,13 +88,15 @@ const Header = () => {
                   <li><a>Logout</a></li>
                 </ul>
               </div>
-
+              /* profile picture end */
               :
-              <a className="btn btn-ghost px-5 py-0">login</a>}
+              <>
+                <Link to='/access/login' className="btn btn-ghost px-5 py-0">
+                  login
+                </Link>
+              </>
+            }
           </div>
-          {/* profile picture start */}
-
-          {/* profile picture end */}
         </div>
       </div >
     </>

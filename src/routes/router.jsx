@@ -6,6 +6,9 @@ import Home from "../pages/Home/Home";
 import Recipes from "../pages/Home/Recipes";
 import Blogs from "../pages/Home/Blogs";
 import UserProfile from "../pages/Home/UserProfile";
+import Access from "../layout/access";
+import Register from "../pages/Access/Register";
+import Login from "../pages/Access/Login";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +34,20 @@ const router = createBrowserRouter([
       },
     ]
   },
+  {
+    path: 'access',
+    element: <Access></Access>,
+    children: [
+      {
+        path: 'login',
+        element: <Login></Login>
+      },
+      {
+        path: 'register',
+        element: <Register></Register>
+      }
+    ]
+  }
 ]);
 
 export default router;
