@@ -1,19 +1,57 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { AuthContext } from '../../providers/AuthProviders';
 
 const Register = () => {
+  const { createUser, updateUserProfile, googleSignIn, gitHubSignIn } = useContext(AuthContext);
 
   const handleRegister = event => {
     event.preventDefault();
     const form = event.target;
 
     const name = form.name.value;
-    const photoURL = form.photoURL.value;
+    const pURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log(name, photoURL, email, password)
+    createUser(email, password)
+      .then(result => {
+        const loggedUser = result.user;
+      })
+      .catch(error => {
+        console.log(error);
+      });
+
+    updateUserProfile(name, pURL)
+      .then(() => {
+        console.log('profile updated');
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
+
+  const handleGitHubSignIn = () => {
+    gitHubSignIn()
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch(error => {
+        console.log(error);
+      })
   }
 
   return (
@@ -43,8 +81,8 @@ const Register = () => {
         </form>
         <div className='text-center'>
           <p>Or Sign up with</p>
-          <button className='mr-2'><FaGoogle className='text-4xl' /></button>
-          <button><FaGithub className='text-4xl' /></button>
+          <button onClick={handleGoogleSignIn} className='mr-2'><FaGoogle className='text-4xl' /></button>
+          <button onClick={handleGitHubSignIn}><FaGithub className='text-4xl' /></button>
         </div>
         <div>
           <p>Do you already have an account?

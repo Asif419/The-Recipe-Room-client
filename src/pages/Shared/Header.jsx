@@ -4,7 +4,17 @@ import { Tooltip } from 'react-tippy';
 import { AuthContext } from '../../providers/AuthProviders';
 
 const Header = () => {
-  const { user } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {
+        console.log('log out successful');
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
   return (
     <>
       {/* add new one */}
@@ -85,7 +95,9 @@ const Header = () => {
                       Profile
                     </Link>
                   </li>
-                  <li><a>Logout</a></li>
+                  <li>
+                    <button onClick={handleLogOut}>Log out</button>
+                  </li>
                 </ul>
               </div>
               /* profile picture end */

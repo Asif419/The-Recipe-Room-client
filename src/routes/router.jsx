@@ -32,6 +32,11 @@ const router = createBrowserRouter([
         path: '/user-profile',
         element: <UserProfile></UserProfile> 
       },
+      // {
+      //   path: 'chef/:id',
+      //   element: ,
+      //   loader: {params} => fetch(`/${param.id}`)
+      // }
     ]
   },
   {
