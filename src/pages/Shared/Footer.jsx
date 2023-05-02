@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div>
       <div className='p-10 bg-base-200 text-base-content'>
-        <div className='px-10 md:px-32 grid grid-cols-1 md:grid-cols-3 place-items-stretch'>
+        <div className='px-10 md:px-32 grid grid-cols-1 md:grid-cols-3 place-items-stretch gap-3'>
           <div className='flex flex-col justify-end'>
             <span className="footer-title">Services</span>
             <a className="link link-hover">Branding</a>
@@ -12,14 +12,14 @@ const Footer = () => {
             <a className="link link-hover">Marketing</a>
             <a className="link link-hover">Advertisement</a>
           </div>
-          <div className='flex flex-col place-items-center'>
+          <div className='flex flex-col md:place-items-center'>
             <span className="footer-title">Company</span>
             <a className="link link-hover">About us</a>
             <a className="link link-hover">Contact</a>
             <a className="link link-hover">Jobs</a>
             <a className="link link-hover">Press kit</a>
           </div>
-          <div className='flex flex-col place-items-end'>
+          <div className='flex flex-col md:place-items-end'>
             <span className="footer-title">Legal</span>
             <a className="link link-hover">Terms of use</a>
             <a className="link link-hover">Privacy policy</a>
