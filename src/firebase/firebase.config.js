@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBkuB_uMlMIsYQVkkvyMXtTYU_r6pCHLPo",
-  authDomain: "the-recipe-room-client.firebaseapp.com",
-  projectId: "the-recipe-room-client",
-  storageBucket: "the-recipe-room-client.appspot.com",
-  messagingSenderId: "395909066988",
-  appId: "1:395909066988:web:098536949804213a22b5c9"
+  apiKey: import.meta.env.VIE_APIKEY,
+  authDomain: import.meta.env.VIE_AUTHDOMAIN,
+  projectId: import.meta.env.VIE_PROJECTID,
+  storageBucket: import.meta.env.VIE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VIE_MESSAGINGSENDERID,
+  appId: import.meta.env.VIE_APPID,
 };
 
 // Initialize Firebase
