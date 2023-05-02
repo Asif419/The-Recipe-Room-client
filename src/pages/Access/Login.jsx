@@ -4,7 +4,7 @@ import { AuthContext } from '../../providers/AuthProviders';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
-  const { googleSignIn, gitHubSignIn } = useContext(AuthContext);
+  const { emailSingIn, googleSignIn, gitHubSignIn } = useContext(AuthContext);
 
 
   const handleLogin = event => {
@@ -14,7 +14,14 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    console.log(email, password)
+    emailSingIn(email, password)
+      .then(result => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+      })
+      .catch(error => {
+        console.log(error);
+      })
   }
 
   const handleGoogleSignIn = () => {

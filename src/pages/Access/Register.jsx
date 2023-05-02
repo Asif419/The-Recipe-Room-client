@@ -23,13 +23,7 @@ const Register = () => {
         console.log(error);
       });
 
-    updateUserProfile(name, pURL)
-      .then(() => {
-        console.log('profile updated');
-      })
-      .catch(error => {
-        console.log(error);
-      })
+    updateUserProfile(name, pURL);
   }
 
   const handleGoogleSignIn = () => {
