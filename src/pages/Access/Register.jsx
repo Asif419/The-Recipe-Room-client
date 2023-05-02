@@ -1,19 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaGoogle, FaGithub } from "react-icons/fa";
 
 const Register = () => {
+
+  const handleRegister = event => {
+    event.preventDefault();
+    const form = event.target;
+
+    const name = form.name.value;
+    const photoURL = form.photoURL.value;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    console.log(name, photoURL, email, password)
+  }
+
   return (
     <div>
-      <div className="text-center mx-auto p-5 md:p-10form-control w-full max-w-xs">
-        <div className='mb-3'>
+      <div className="text-center mx-auto p-5 md:p-10 form-control w-full max-w-md">
+        <form onSubmit={handleRegister} className='mb-3'>
           <h3 className='text-3xl mb-5'>Registration!</h3>
-          <span className="label-text">What is your Name?</span>
-          <input type="email" placeholder="Enter Your name" name='name' className="input input-bordered w-full max-w-xs text-center mb-3" />
-          <span className="label-text">E-mail ?</span>
-          <input type="email" placeholder="Enter Your E-mail" name='email' className="input input-bordered w-full max-w-xs text-center mb-3" />
-          <span className="label-text">Create a password (at least 6 characters) </span>
-          <input type="text" placeholder="Enter Your Name" name='password' className="input input-bordered w-full max-w-xs text-center mb-3" />
+          <div className='grid grid-cols-2 gap-1 justify-items-center items-center'>
+            <div>
+              <span className="label-text">What is your Name?</span>
+              <input type="text" placeholder="Enter Your name" name='name' className="input input-bordered w-full max-w-xs text-center mb-3" required />
+            </div>
+            <div>
+              <span className="label-text">Share your photo</span>
+              <input type="text" placeholder="Photo URL" name='photoURL' className="input input-bordered w-full max-w-xs text-center mb-3" required />
+            </div>
+            <div>
+              <span className="label-text">E-mail ?</span>
+              <input type="email" placeholder="Enter Your E-mail" name='email' className="input input-bordered w-full max-w-xs text-center mb-3" required />
+            </div>
+            <div>
+              <span className="label-text">Create a password (at least 6 characters) </span>
+              <input type="Password" placeholder="Enter Your Password" name='password' className="input input-bordered w-full max-w-xs text-center mb-3" required />
+            </div>
+          </div>
           <button className="btn btn-outline  text-black-800">Sign up</button>
+        </form>
+        <div className='text-center'>
+          <p>Or Sign up with</p>
+          <button className='mr-2'><FaGoogle className='text-4xl' /></button>
+          <button><FaGithub className='text-4xl' /></button>
         </div>
         <div>
           <p>Do you already have an account?
