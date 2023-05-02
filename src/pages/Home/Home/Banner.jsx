@@ -1,13 +1,15 @@
 import React from 'react';
+import { FaSearchengin ,FaJenkins, FaBreadSlice, FaHandPeace } from 'react-icons/fa';
 
 const Banner = () => {
   return (
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-3 p-5 md:p-10'>
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-3 p-5 md:p-10 justify-items-center items-center	'>
       {/* left side */}
       <div className='px-2 md:px-5'>
+        <p className=''>------ <span className='text-red-500 tracking-widest'>Chefs + Recipes</span></p>
         <h2 className='text-1xl md:text-3xl'>
-          Welcome to
-          <span className='underline decoration-base-200 text-2xl md:text-4xl pl-1 md:pl-2 font-bold'>The Recipe Room</span>
+          <span className='text-2xl md:text-5xl text-red-800'>Welcome to</span>
+          <span className='underline decoration-base-200 text-2xl md:text-5xl pl-1 md:pl-2 font-bold'>The Recipe Room</span>
         </h2>
         <br />
         <p className=' text-slate-500'>
@@ -15,6 +17,25 @@ const Banner = () => {
           <br />
           On your website, you can showcase recipes of American cuisines and cultures, including appetizers, entrees, desserts, and more. You can also provide detailed cooking instructions, ingredient lists, and tips and tricks for preparing each dish.
         </p>
+        <br />
+        <div className='text-1xl text-red-800 grid grid-cols-2'>
+          <span className='flex gap-2 justify-items-center items-center'>
+            <FaSearchengin />
+            Founding year: 2023
+          </span>
+          <span className='flex gap-2 justify-items-center items-center'>
+            <FaJenkins />
+            Chefs: 5+
+          </span>
+          <span className='flex gap-2 justify-items-center items-center'>
+            <FaBreadSlice />
+            Recipes: 17+
+          </span>
+          <span className='flex gap-2 justify-items-center items-center'>
+            <FaHandPeace />
+            Review: 1500+
+          </span>
+        </div>
       </div>
       {/* right side */}
       <div className='sm:order-first'>
