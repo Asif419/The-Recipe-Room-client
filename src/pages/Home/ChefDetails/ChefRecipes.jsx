@@ -6,8 +6,9 @@ const ChefRecipes = ({ chef }) => {
   const [tallCard, setTallCard] = useState(false);
 
   useEffect(() => {
-    const isTall = recipes.some(recipe => recipe.cooking_method.length > 350);
+    const isTall = recipes.some(recipe => recipe.cooking_method.length > 305);
     setTallCard(isTall);
+    console.log(isTall);
   }, [recipes]);
   
   return (
