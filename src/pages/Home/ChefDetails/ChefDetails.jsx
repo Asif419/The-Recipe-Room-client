@@ -16,7 +16,7 @@ const ChefDetails = () => {
         <div className='grid grid-cols-1 md:grid-cols-2 gap-5 justify-items-center items-center'>
           <div>
             <Lottie
-              className='h-[40vh] w-[40vh]'
+              className='h-[45vh] w-[45vh]'
               animationData={cooking}
               loop={true}
             />
