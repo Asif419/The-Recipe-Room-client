@@ -37,8 +37,8 @@ const Chefs = () => {
       <div className='text-center'>
         {
           more ?
-            <button onClick={() => setMore(!more)} className="btn btn-primary">Show Less</button> :
-            <button onClick={() => setMore(!more)} className="btn btn-primary">Show More</button>
+            <button onClick={() => setMore(!more)} className="btn btn-secondary">Show Less</button> :
+            <button onClick={() => setMore(!more)} className="btn btn-secondary">Show More</button>
         }
       </div>
     </div>

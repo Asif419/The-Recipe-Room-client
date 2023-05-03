@@ -9,7 +9,7 @@ import UserProfile from "../pages/Home/UserProfile";
 import Access from "../layout/access";
 import Register from "../pages/Access/Register";
 import Login from "../pages/Access/Login";
-import ChefDetails from "../pages/Home/ChefDetails";
+import ChefDetails from "../pages/Home/ChefDetails/ChefDetails";
 import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
