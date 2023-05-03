@@ -5,3 +5,4 @@ registration location direction
 profile picture dynamic in navbar
 empty login and register page after submit
 bio on chefs description
+registration message return from auth
