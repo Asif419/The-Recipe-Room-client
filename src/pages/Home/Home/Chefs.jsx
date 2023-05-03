@@ -18,7 +18,7 @@ const Chefs = () => {
       })
   }, [more])
   return (
-    <div className='py-10 md:py-16'>
+    <div className='p-5 md:p-10 py-10 md:py-16'>
       <div className='text-center mb-5'>
         <h2 className='text-1xl md:text-3xl'>
           <span className='underline decoration-base-200 text-4xl md:text-5xl pl-1 md:pl-2 font-bold'>Chefs</span>
