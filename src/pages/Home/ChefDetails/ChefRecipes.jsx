@@ -1,8 +1,15 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SingleRecipe from './SingleRecipe';
 
 const ChefRecipes = ({ chef }) => {
   const { recipes, chef_name } = chef;
+  const [tallCard, setTallCard] = useState(false);
+
+  useEffect(() => {
+    const isTall = recipes.some(recipe => recipe.cooking_method.length > 350);
+    setTallCard(isTall);
+  }, [recipes]);
+  
   return (
     <div className='my-16 md:my-20'>
       <div className='text-center mb-10'>
@@ -17,6 +24,7 @@ const ChefRecipes = ({ chef }) => {
             <SingleRecipe
               key={recipe.recipe_id}
               recipe={recipe}
+              tallCard={tallCard}
             >
             </SingleRecipe>
           )
