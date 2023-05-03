@@ -12,6 +12,7 @@ import Login from "../pages/Access/Login";
 import ChefDetails from "../pages/Home/ChefDetails/ChefDetails";
 import PrivateRoute from "./PrivateRoute";
 import Error from "../layout/Error";
+import Chefs from "../pages/Home/Home/Chefs";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/chefs',
+        element: <Chefs></Chefs>
       },
       {
         path: '/recipes',

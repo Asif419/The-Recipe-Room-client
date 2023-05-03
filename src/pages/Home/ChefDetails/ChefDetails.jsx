@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import Lottie from "lottie-react";
 import cooking from '../../../assets/animation/cooking.json'
 import ChefRecipes from './ChefRecipes';
@@ -33,7 +33,9 @@ const ChefDetails = () => {
                   <p className='text-black mt-5'><FaBriefcase className='text-2xl text-white mb-2' /><span className='text-white'>{description}</span></p>
                 </div>
                 <div className="card-actions justify-end">
-                  <button className="btn btn-secondary">Check Chefs list</button>
+                  <Link to='/chefs'>
+                    <button className="btn btn-secondary">Check Chefs list</button>
+                  </Link>
                 </div>
               </div>
             </div>

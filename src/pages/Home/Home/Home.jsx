@@ -6,7 +6,7 @@ import Loading from '../../../layout/Loading';
 
 const Home = () => {
   return (
-    <div className='px-5 md:px-36'>
+    <div className=''>
       <Banner></Banner>
       <Chefs></Chefs>
     </div>
