@@ -11,6 +11,7 @@ import Register from "../pages/Access/Register";
 import Login from "../pages/Access/Login";
 import ChefDetails from "../pages/Home/ChefDetails/ChefDetails";
 import PrivateRoute from "./PrivateRoute";
+import Error from "../layout/Error";
 
 const router = createBrowserRouter([
   {

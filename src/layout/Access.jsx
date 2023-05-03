@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../pages/Shared/Header';
+import Footer from '../pages/Shared/Footer';
+import { AuthContext } from '../providers/AuthProviders';
+import Loading from './Loading';
 
 const Access = () => {
+  const { loading } = useContext(AuthContext);
+  if (loading) {
+    return <Loading></Loading>
+  }
   return (
-    <div className='container mx-auto'>
-      <Header></Header>
-      <Outlet></Outlet>
-    </div>
+    <>
+      <div className='container mx-auto'>
+        <Header></Header>
+        <Outlet></Outlet>
+      </div>
+      <Footer></Footer>
+    </>
   );
 };
 

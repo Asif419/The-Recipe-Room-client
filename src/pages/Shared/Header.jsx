@@ -1,10 +1,14 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Tooltip } from 'react-tippy';
 import { AuthContext } from '../../providers/AuthProviders';
+import { Tooltip } from 'react-tooltip';
+import Loading from '../../layout/Loading';
 
 const Header = () => {
-  const { user, logOut } = useContext(AuthContext);
+  const { user, logOut, loading } = useContext(AuthContext);
+  if (loading) {
+    return <Loading></Loading>
+  }
 
   const handleLogOut = () => {
     logOut()
@@ -82,13 +86,13 @@ const Header = () => {
             {user ?
               /* profile picture start */
               <div className="dropdown dropdown-end">
-                <Tooltip title="Hello, user!">
+                <div data-tooltip-id="my-tooltip" data-tooltip-content="Hello world!" className='m-0 p-0'>
                   <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
                       <img src="https://i.ibb.co/51StNHm/Lobster-Risotto.jpg" />
                     </div>
                   </label>
-                </Tooltip>
+                </div>
                 <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
                   <li>
                     <Link to='/user-profile'>
@@ -111,6 +115,7 @@ const Header = () => {
           </div>
         </div>
       </div >
+      <Tooltip id="my-tooltip" />
     </>
   );
 };
