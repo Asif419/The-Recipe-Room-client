@@ -7,7 +7,7 @@ const Banner = () => {
       <div className='grid grid-cols-1 md:grid-cols-2 gap-3 p-5 md:p-10 justify-items-center items-center	'>
         {/* left side */}
         <div className='px-2 md:px-5'>
-          <p className=''>------ <span className='text-red-500 tracking-widest'>Chefs + Recipes</span></p>
+          <p className=''>------ <span className='text-red-500 tracking-widest'>Cook like chef</span></p>
           <h2 className='text-1xl md:text-3xl'>
             <span className='text-3xl md:text-5xl text-red-800'>Welcome to</span>
             <span className='underline decoration-base-200 text-3xl md:text-5xl pl-1 md:pl-2 font-bold'>The Recipe Room</span>
