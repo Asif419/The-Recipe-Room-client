@@ -4,14 +4,18 @@ import Chefs from './Chefs';
 import { useNavigation } from 'react-router-dom';
 import Loading from '../../../layout/Loading';
 import Menu from './Menu';
+import Question from './Question';
+import BestRecipes from './BestRecipes';
 
 const Home = () => {
   return (
-    <div className=''>
+    <>
       <Banner></Banner>
       <Chefs></Chefs>
       <Menu></Menu>
-    </div>
+      <Question></Question>
+      <BestRecipes></BestRecipes>
+    </>
   );
 };
 
