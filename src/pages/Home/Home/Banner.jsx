@@ -30,7 +30,7 @@ const Banner = () => {
             </span>
             <span className='flex gap-2 justify-items-center items-center'>
               <FaBreadSlice />
-              Recipes: 17+
+              Recipes: 170+
             </span>
             <span className='flex gap-2 justify-items-center items-center'>
               <FaHandPeace />
