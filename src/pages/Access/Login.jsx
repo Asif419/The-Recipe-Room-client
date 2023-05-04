@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProviders';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
@@ -8,6 +8,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/';
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const handleLogin = event => {
     event.preventDefault();
@@ -23,7 +24,8 @@ const Login = () => {
         navigate(from, { replace: true });
       })
       .catch(error => {
-        console.log(error);
+        setErrorMessage(error.message);
+        console.log(errorMessage);
       })
   }
 
@@ -58,6 +60,14 @@ const Login = () => {
           <input type="email" placeholder="Enter Your E-mail" name='email' className="input input-bordered w-full max-w-xs text-center mb-3" required />
           <span className="label-text">Enter your password?</span>
           <input type="password" placeholder="Enter Your Password" name='password' className="input input-bordered w-full max-w-xs text-center mb-3" required />
+          {
+            (!errorMessage) ? '' :
+            errorMessage === 'Firebase: Error (auth/wrong-password).' ?
+              <p>Wrong password. Please try again.</p> :
+              errorMessage === 'Firebase: Error (auth/user-not-found).' ?
+                <p>User not found. Please check your email and try again.</p> :
+                <p>'An error occurred. Please try again later.'</p>
+          }
           <button className="btn btn-outline text-black-800">Login</button>
         </form>
         <div className='text-center'>
@@ -74,7 +84,7 @@ const Login = () => {
           </p>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

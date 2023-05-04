@@ -1,36 +1,39 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect, useState } from 'react';
+import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../providers/AuthProviders';
 
 const Register = () => {
-  const { createUser, updateUserProfile, googleSignIn, gitHubSignIn } = useContext(AuthContext);
+  const { user, createUser, updateUserProfile, googleSignIn, gitHubSignIn, logOut } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState(null);
 
   const handleRegister = event => {
     event.preventDefault();
-    const form = event.target;
 
+    const form = event.target;
     const name = form.name.value;
-    const pURL = form.photoURL.value;
+    const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
-
     createUser(email, password)
       .then(result => {
         const loggedUser = result.user;
+        updateUserProfile(name, photoURL);
+        logOut();
+        navigate('/access/login', { replace: true });
       })
       .catch(error => {
-        console.log(error);
+        // form.reset()
+        setErrorMessage(error.message);
       });
-
-    updateUserProfile(name, pURL);
   }
 
   const handleGoogleSignIn = () => {
     googleSignIn()
       .then(result => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        navigate('/', { replace: true });
       })
       .catch(error => {
         console.log(error);
@@ -41,7 +44,7 @@ const Register = () => {
     gitHubSignIn()
       .then(result => {
         const loggedUser = result.user;
-        console.log(loggedUser);
+        navigate('/', { replace: true });
       })
       .catch(error => {
         console.log(error);
@@ -71,6 +74,14 @@ const Register = () => {
               <input type="Password" placeholder="Enter Your Password" name='password' className="input input-bordered w-full max-w-xs text-center mb-3" required />
             </div>
           </div>
+          {
+            (!errorMessage) ? '' :
+              errorMessage === 'Firebase: Error (auth/wrong-password).' ?
+                <p>Wrong password. Please try again.</p> :
+                errorMessage === 'Firebase: Error (auth/user-not-found).' ?
+                  <p>User not found. Please check your email and try again.</p> :
+                  <p>'An error occurred. Please try again later.'</p>
+          }
           <button className="btn btn-outline  text-black-800">Sign up</button>
         </form>
         <div className='text-center'>

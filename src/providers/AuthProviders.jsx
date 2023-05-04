@@ -14,7 +14,7 @@ const AuthProviders = ({ children }) => {
 
   const createUser = (email, password) => {
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password)
+    return createUserWithEmailAndPassword(auth, email, password, { signIn: false })
   }
 
   const updateUserProfile = (name, pURL) => {
@@ -23,10 +23,8 @@ const AuthProviders = ({ children }) => {
       photoURL: `${pURL}`
     })
       .then(() => {
-        console.log('profile updated');
       })
       .catch(error => {
-        console.log(error);
       })
   };
 

@@ -50,6 +50,7 @@ const router = createBrowserRouter([
   {
     path: 'access',
     element: <Access></Access>,
+    errorElement: <Error></Error>,
     children: [
       {
         path: 'login',

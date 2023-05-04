@@ -29,7 +29,6 @@ const BestRecipes = () => {
   if (isLoading) {
     return <Loading></Loading>
   }
-  console.log(slicedArray)
   return (
     <div className='px-8 md:px-36 my-5'>
       <div className='p-5 md:p-10'>
@@ -61,7 +60,6 @@ const BestRecipes = () => {
                       </div>
                     </div>
                   </div>
-
                 </div>
               )
             })
