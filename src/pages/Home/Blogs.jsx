@@ -3,6 +3,9 @@ import React from 'react';
 const Blogs = () => {
   return (
     <div className='px-5 md:px-36'>
+      <div>
+        
+      </div>
       <div className='p-5 md:p-10 py-10 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-3'>
         <div className='border p-3 md:p-5 rounded-lg bg-pink-100'>
           <p className='font-medium'>Differences between uncontrolled and controlled components?</p>
