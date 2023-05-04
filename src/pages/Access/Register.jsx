@@ -8,8 +8,6 @@ const Register = () => {
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
   const location = useLocation();
-  const { from } = location.state;
-  // console.log('register', from);
 
   const handleRegister = event => {
     event.preventDefault();

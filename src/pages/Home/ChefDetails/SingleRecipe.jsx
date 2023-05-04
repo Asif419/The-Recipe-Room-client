@@ -2,12 +2,10 @@ import React, { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
 
 
 const SingleRecipe = ({ recipe, tallCard }) => {
-  const { recipe_url, recipe_name, ingredients, cooking_method, rating } = recipe;
+  const { recipe_id, recipe_url, recipe_name, ingredients, cooking_method, rating } = recipe;
   const [favorite, setFavorite] = useState(false);
 
   const handleFavorite = () => {
@@ -22,13 +20,7 @@ const SingleRecipe = ({ recipe, tallCard }) => {
   return (
     <div>
       <div className="card bg-base-100 shadow-xl rounded-lg flex items-stretch">
-        <figure className="h-60">
-          <LazyLoadImage
-            className='h-full w-full object-cover'
-            src={recipe_url}
-            effect="blur"
-            alt="recipe" />
-        </figure>
+        <figure className="h-60"><img className='h-full w-full object-cover' src={recipe_url} alt="recipe" /></figure>
         <div className={tallCard ?
           'card-body md:min-h-[600px] flex-1' :
           'card-body md:min-h-[450px] flex-1'}>

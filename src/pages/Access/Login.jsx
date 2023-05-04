@@ -8,7 +8,6 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || location.state?.from?.from || '/';
-  console.log(from);
   const [errorMessage, setErrorMessage] = useState(null);
 
   const handleLogin = event => {
