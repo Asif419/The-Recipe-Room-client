@@ -22,9 +22,9 @@ const SingleRecipe = ({ recipe, tallCard }) => {
       <div className="card bg-base-100 shadow-xl rounded-lg flex items-stretch">
         <figure className="h-60"><img className='h-full w-full object-cover' src={recipe_url} alt="recipe" /></figure>
         <div className={tallCard ?
-          'card-body md:min-h-[600px] flex-1' :
-          'card-body md:min-h-[450px] flex-1'}>
-          <h2 className="card-title text-2xl text-pink-800 min-h-[10vh]">{recipe_name}</h2>
+          'card-body md:min-h-[630px] flex-1' :
+          'card-body md:min-h-[470px] flex-1'}>
+          <h2 className="card-title text-2xl text-pink-800 min-h-[5vh]">{recipe_name}</h2>
           <div>
             <span className='font-bold'>Rating</span>
             <Rating
