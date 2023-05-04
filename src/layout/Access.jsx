@@ -6,10 +6,6 @@ import { AuthContext } from '../providers/AuthProviders';
 import Loading from './Loading';
 
 const Access = () => {
-  const { loading } = useContext(AuthContext);
-  if (loading) {
-    return <Loading></Loading>
-  }
   return (
     <>
       <div className='container mx-auto'>

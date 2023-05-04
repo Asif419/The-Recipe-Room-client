@@ -16,6 +16,20 @@ const Register = () => {
     const photoURL = form.photoURL.value;
     const email = form.email.value;
     const password = form.password.value;
+
+    if (password.length < 6) {
+      setErrorMessage('Password should be at least 6 characters');
+      return;
+    }
+    else if (!/(?=.*[A-Z])/.test(password)) {
+      setErrorMessage('Use at least one Uppercase in password');
+      return;
+    }
+    else if (!/(?=.*[0-9])/.test(password)) {
+      setErrorMessage('Use at least one number in password');
+      return;
+    }
+
     createUser(email, password)
       .then(result => {
         const loggedUser = result.user;
@@ -50,7 +64,6 @@ const Register = () => {
         console.log(error);
       })
   }
-
   return (
     <div>
       <div className="text-center mx-auto p-5 md:p-10 form-control w-full max-w-md">
@@ -75,12 +88,22 @@ const Register = () => {
             </div>
           </div>
           {
-            (!errorMessage) ? '' :
-              errorMessage === 'Firebase: Error (auth/wrong-password).' ?
-                <p>Wrong password. Please try again.</p> :
-                errorMessage === 'Firebase: Error (auth/user-not-found).' ?
-                  <p>User not found. Please check your email and try again.</p> :
-                  <p>'An error occurred. Please try again later.'</p>
+            errorMessage && (
+              <div className='border border-red-400 rounded-lg w-2/3 mx-auto text text-red-600 m-2 '>
+                {
+                  errorMessage.slice(0, 9) === 'Firebase:' ? (
+                    errorMessage === 'Firebase: Error (auth/email-already-in-use).' ?
+                      <p>Email already used</p> :
+                      errorMessage === 'Firebase: Error (auth/invalid-email).' ?
+                        <p>Email is not formatted correctly</p> :
+                        errorMessage === 'Firebase: Error (auth/too-many-requests).' ?
+                          <p>Too many attempts, try again later</p> :
+                          <p>'There was an error while trying to create your account. Please try again later.'</p>
+                  ) :
+                    <p>{errorMessage}</p>
+                }
+              </div>
+            )
           }
           <button className="btn btn-outline  text-black-800">Sign up</button>
         </form>

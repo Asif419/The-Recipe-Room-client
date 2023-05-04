@@ -5,11 +5,7 @@ import { Tooltip } from 'react-tooltip';
 import Loading from '../../layout/Loading';
 
 const Header = () => {
-  const { user, logOut, loading } = useContext(AuthContext);
-  if (loading) {
-    return <Loading></Loading>
-  }
-
+  const { user, logOut } = useContext(AuthContext);
   const handleLogOut = () => {
     logOut()
       .then(() => {
@@ -43,16 +39,6 @@ const Header = () => {
                 </li>
                 <li>
                   <NavLink
-                    to="/recipes"
-                    className={({ isActive, isPending }) =>
-                      isActive ? "font-bold decoration-stone-950" : ""
-                    }
-                  >
-                    Recipes
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink
                     to="/blogs"
                     className={({ isActive, isPending }) =>
                       isActive ? "font-bold decoration-stone-950" : ""
@@ -72,22 +58,22 @@ const Header = () => {
             <ul className="menu menu-horizontal px-1">
               <li>
                 <NavLink
+                  to="/"
+                  className={({ isActive, isPending }) =>
+                    isActive ? "font-bold decoration-stone-950" : ""
+                  }
+                >
+                  Home
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
                   to="/chefs"
                   className={({ isActive, isPending }) =>
                     isActive ? "font-bold decoration-stone-950" : ""
                   }
                 >
                   Chefs
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/recipes"
-                  className={({ isActive, isPending }) =>
-                    isActive ? "font-bold decoration-stone-950" : ""
-                  }
-                >
-                  Recipes
                 </NavLink>
               </li>
               <li>

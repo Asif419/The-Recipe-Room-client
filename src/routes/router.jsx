@@ -3,7 +3,6 @@ import {
 } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../pages/Home/Home/Home";
-import Recipes from "../pages/Home/Recipes";
 import Blogs from "../pages/Home/Blogs";
 import UserProfile from "../pages/Home/UserProfile";
 import Access from "../layout/access";
@@ -27,10 +26,6 @@ const router = createBrowserRouter([
       {
         path: '/chefs',
         element: <Chefs></Chefs>
-      },
-      {
-        path: '/recipes',
-        element: <Recipes></Recipes>
       },
       {
         path: '/blogs',

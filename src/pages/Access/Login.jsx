@@ -25,7 +25,6 @@ const Login = () => {
       })
       .catch(error => {
         setErrorMessage(error.message);
-        console.log(errorMessage);
       })
   }
 
@@ -61,12 +60,18 @@ const Login = () => {
           <span className="label-text">Enter your password?</span>
           <input type="password" placeholder="Enter Your Password" name='password' className="input input-bordered w-full max-w-xs text-center mb-3" required />
           {
-            (!errorMessage) ? '' :
-            errorMessage === 'Firebase: Error (auth/wrong-password).' ?
-              <p>Wrong password. Please try again.</p> :
-              errorMessage === 'Firebase: Error (auth/user-not-found).' ?
-                <p>User not found. Please check your email and try again.</p> :
-                <p>'An error occurred. Please try again later.'</p>
+            errorMessage && (
+              <div className='border border-red-400 rounded-lg w-2/3 mx-auto text text-red-600 m-2 '>
+                {
+                  (!errorMessage) ? '' :
+                    errorMessage === 'Firebase: Error (auth/wrong-password).' ?
+                      <p>Wrong password. Please try again.</p> :
+                      errorMessage === 'Firebase: Error (auth/user-not-found).' ?
+                        <p>User not found. Please check your email and try again.</p> :
+                        <p>'An error occurred. Please try again later.'</p>
+                }
+              </div>
+            )
           }
           <button className="btn btn-outline text-black-800">Login</button>
         </form>
