@@ -40,7 +40,7 @@ All functionalities are shown here:
 - Responsive Navbar 
 - Login information in Navbar 
 - Click on user picture found logout and profile buttons.
-- In profile route you will find your detals with picture and name.
+- In profile route you will find your details with picture and name.
 - In home page, banner will show summary of website with total data and some recipes photo of our own.
 - Dynamic chefs list with see more / see less button.
 - Each chef has Details button which are protected route.

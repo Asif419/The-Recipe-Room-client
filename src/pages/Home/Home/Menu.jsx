@@ -29,7 +29,7 @@ const Menu = () => {
             <div className='relative'>
               <img className='h-16 w-16 mb-5 transition-transform duration-500 group-hover:-translate-y-4 opacity-100' src={meat} alt="meat" />
               <p className='text-2xl md:text-3xl pl-1 font-bold transition-transform duration-500 group-hover:-translate-y-4 opacity-100'>Mains</p>
-              <p className='text-xs md:text-lg md:text-xl pl-1 md:pl-2 transition-all duration-500 group-hover:opacity-100 opacity-0'>Classic Lasagna (most viewed)</p>
+              <p className='text-xs md:text-lg pl-1 md:pl-2 transition-all duration-500 group-hover:opacity-100 opacity-0'>Classic Lasagna (most viewed)</p>
             </div>
           </div>
           <div className='bg-white rounded p-5 md:p-10 group'>
