@@ -10,7 +10,6 @@ const Main = () => {
   if(loading) {
     return <Loading></Loading>
   }
-
   return (
     <>
       <div className='container mx-auto'>

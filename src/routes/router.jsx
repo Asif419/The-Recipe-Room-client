@@ -3,7 +3,7 @@ import {
 } from "react-router-dom";
 import Main from "../layout/Main";
 import Home from "../pages/Home/Home/Home";
-import Blogs from "../pages/Home/Blogs";
+import Blogs from "../pages/Home/Blogs/Blogs";
 import UserProfile from "../pages/Home/UserProfile";
 import Access from "../layout/access";
 import Register from "../pages/Access/Register";
