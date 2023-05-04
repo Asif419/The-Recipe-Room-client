@@ -90,24 +90,27 @@ const Header = () => {
           <div className="navbar-end">
             {user ?
               /* profile picture start */
-              <div className="dropdown dropdown-end">
-                <div data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName || ''} className='m-0 p-0'>
-                  <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                    <div className="w-10 rounded-full">
-                      <img src={user?.photoURL || 'https://i.ibb.co/q5hwqD5/photo-1573547429441-d7ef62e04b63.jpg'} />
-                    </div>
-                  </label>
+              <div className='flex'>
+                <button className='btn btn-ghost px-5 py-0' onClick={handleLogOut}>Log out</button>
+                <div className="dropdown dropdown-end">
+                  <div data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName || ''} className='m-0 p-0'>
+                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                      <div className="w-10 rounded-full">
+                        <img src={user?.photoURL || 'https://i.ibb.co/q5hwqD5/photo-1573547429441-d7ef62e04b63.jpg'} />
+                      </div>
+                    </label>
+                  </div>
+                  <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
+                    <li>
+                      <Link to='/user-profile'>
+                        Profile
+                      </Link>
+                    </li>
+                    <li>
+                      <button onClick={handleLogOut}>Log out</button>
+                    </li>
+                  </ul>
                 </div>
-                <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                  <li>
-                    <Link to='/user-profile'>
-                      Profile
-                    </Link>
-                  </li>
-                  <li>
-                    <button onClick={handleLogOut}>Log out</button>
-                  </li>
-                </ul>
               </div>
               /* profile picture end */
               :
