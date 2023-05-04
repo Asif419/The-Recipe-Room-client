@@ -8,6 +8,7 @@ full project will be available here
 ## To login use demo id
 Email: user@gmail.com
 Password: 123456A
+Guide on creating a user: Make sure your password has at least one Uppercase and one number, and Also you have to confirm your password has more than 5 characters
 
 ## This website's server in GitHub
 > https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-server-side-Asif419 (Private not for everyone)   
@@ -39,7 +40,7 @@ All functionalities are shown here:
 - Responsive Navbar 
 - Login information in Navbar 
 - Click on user picture found logout and profile buttons.
-- In profile route you will find your details with picture and name.
+- In profile route you will find your detals with picture and name.
 - In home page, banner will show summary of website with total data and some recipes photo of our own.
 - Dynamic chefs list with see more / see less button.
 - Each chef has Details button which are protected route.
