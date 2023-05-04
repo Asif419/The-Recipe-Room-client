@@ -48,7 +48,7 @@ const Register = () => {
     googleSignIn()
       .then(result => {
         const loggedUser = result.user;
-        navigate('/', { replace: true });
+        navigate(`${location.state.from}`, { replace: true });
       })
       .catch(error => {
         console.log(error);
@@ -59,7 +59,7 @@ const Register = () => {
     gitHubSignIn()
       .then(result => {
         const loggedUser = result.user;
-        navigate('/', { replace: true });
+        navigate(`${location.state.from}`, { replace: true });
       })
       .catch(error => {
         console.log(error);
