@@ -1,5 +1,6 @@
 # The Recipe Room
 ## _Programming Hero Assignment 10_
+- This website made on based American chefs and recipes. You will find American most popular chefs and their most viewed recipes here. But you need to just log in / registration to get the full access
 
 ## Live Link
 > https://the-recipe-room-client.web.app   
@@ -8,7 +9,7 @@ full project will be available here
 ## To login use demo id
 Email: user@gmail.com
 Password: 123456A
-Guide on creating a user: Make sure your password has at least one Uppercase and one number, and Also you have to confirm your password has more than 5 characters
+Guide on creating a new user: Make sure your password has at least one Uppercase and one number, and Also you have to confirm your password has more than 5 characters
 
 ## This website's server in GitHub
 > https://github.com/programming-hero-web-course-4/b7a10-chef-recipe-hunter-server-side-Asif419 (Private not for everyone)   

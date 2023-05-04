@@ -14,7 +14,7 @@ const Banner = () => {
           </h2>
           <br />
           <p className=' text-slate-500'>
-            This recipes and chef website is a platform dedicated to providing recipes, cooking tips, and techniques to individuals who are interested in cooking. The website can offer a wide range of recipes, from simple and easy-to-follow dishes to more complex and elaborate meals. The website may also include information on the latest cooking trends, food-related news, and interviews with renowned chefs.
+            American recipes and chefs website is a platform dedicated to providing recipes, cooking tips, and techniques to individuals who are interested in cooking. The website can offer a wide range of recipes, from simple and easy-to-follow dishes to more complex and elaborate meals. The website may also include information on the latest cooking trends, food-related news, and interviews with renowned chefs.
             <br />
             On your website, you can showcase recipes of American cuisines and cultures, including appetizers, entrees, desserts, and more. You can also provide detailed cooking instructions, ingredient lists, and tips and tricks for preparing each dish.
           </p>
