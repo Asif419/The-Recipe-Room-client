@@ -8,9 +8,8 @@ const ChefRecipes = ({ chef }) => {
   useEffect(() => {
     const isTall = recipes.some(recipe => recipe.cooking_method.length > 305);
     setTallCard(isTall);
-    console.log(isTall);
   }, [recipes]);
-  
+
   return (
     <div className='my-16 md:my-20'>
       <div className='text-center mb-10'>

@@ -9,7 +9,6 @@ import 'react-lazy-load-image-component/src/effects/blur.css';
 const SingleRecipe = ({ recipe, tallCard }) => {
   const { recipe_id, recipe_url, recipe_name, ingredients, cooking_method, rating } = recipe;
   const [favorite, setFavorite] = useState(false);
-  console.log(tallCard);
 
   const handleFavorite = () => {
     setFavorite(true);

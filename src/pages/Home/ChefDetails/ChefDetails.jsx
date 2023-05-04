@@ -8,7 +8,6 @@ import { FaBriefcase } from "react-icons/fa";
 const ChefDetails = () => {
   const chef = useLoaderData();
   const { chef_id, chef_name, chef_picture, years_of_experience, num_of_recipes, likes, description } = chef;
-  console.log(chef);
   return (
     <div className='px-5 md:px-36'>
       <div className='p-5 md:p-10'>
