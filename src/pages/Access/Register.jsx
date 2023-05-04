@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../providers/AuthProviders';
 
 const Register = () => {
-  const { user, createUser, updateUserProfile, googleSignIn, gitHubSignIn, logOut } = useContext(AuthContext);
+  const { createUser, updateUserProfile, googleSignIn, gitHubSignIn, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
 

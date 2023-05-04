@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import SingleRecipe from './SingleRecipe';
 
 const ChefRecipes = ({ chef }) => {
-  const { recipes, chef_name } = chef;
+  const { recipes } = chef;
   const [tallCard, setTallCard] = useState(false);
 
   useEffect(() => {
