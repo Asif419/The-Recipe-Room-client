@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import { AuthContext } from '../../providers/AuthProviders';
 
@@ -7,6 +7,9 @@ const Register = () => {
   const { createUser, updateUserProfile, googleSignIn, gitHubSignIn, logOut } = useContext(AuthContext);
   const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState(null);
+  const location = useLocation();
+  const { from } = location.state;
+  // console.log('register', from);
 
   const handleRegister = event => {
     event.preventDefault();
@@ -35,7 +38,7 @@ const Register = () => {
         const loggedUser = result.user;
         updateUserProfile(name, photoURL);
         logOut();
-        navigate('/access/login', { replace: true });
+        navigate('/access/login', { state: { from: location.state } }, { replace: true });
       })
       .catch(error => {
         // form.reset()

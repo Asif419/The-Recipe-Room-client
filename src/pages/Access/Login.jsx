@@ -7,7 +7,8 @@ const Login = () => {
   const { emailSingIn, googleSignIn, gitHubSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || '/';
+  const from = location.state?.from?.pathname || location.state?.from?.from || '/';
+  console.log(from);
   const [errorMessage, setErrorMessage] = useState(null);
 
   const handleLogin = event => {
@@ -83,7 +84,9 @@ const Login = () => {
         <div>
           <p>Do you need an account?
             <br />
-            <Link to='/access/register'>
+            <Link to='/access/register'
+              state={{ from: from }}
+            >
               <span className='underline decoration-1'>Sign up</span>
             </Link>
           </p>
