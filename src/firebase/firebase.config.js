@@ -6,11 +6,11 @@ import { initializeApp } from "firebase/app";
 // Your web app's Firebase configuration
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_APIKEY,
-  authDomain: "the-recipe-room-client.firebaseapp.com",
-  projectId: "the-recipe-room-client",
-  storageBucket: "the-recipe-room-client.appspot.com",
-  messagingSenderId: "395909066988",
-  appId: "1:395909066988:web:098536949804213a22b5c9"
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID
 };
 
 // Initialize Firebase
